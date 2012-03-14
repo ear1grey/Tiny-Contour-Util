@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+read -p "This will delete all movies on the helmet cam.  Proceed (y/n)? " -n 1
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 1
+fi
+
+cd /Volumes/HELMETCAM/DCIM
+rm -r *
+echo "done"
