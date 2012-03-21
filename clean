@@ -7,4 +7,5 @@ fi
 
 cd /Volumes/HELMETCAM/DCIM
 rm -r *
+drutil eject /Volumes/HELMETCAM
 echo "done"
