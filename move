@@ -10,12 +10,16 @@ DEST_ROOT=~/Pictures
 DEST_PATH="$(date +'%Y-%m-%d')"
 DEST_FULL_PATH="${DEST_ROOT}/${DEST_PATH}/"
 
+echo "${SRC_FULL_PATH}"
+echo "${DEST_FULL_PATH}"
+
 # Check there are files to be moved
 if [ "$(ls -A $SRC_FULL_PATH)" ]; then
+	echo "Creating destination: ${DEST_FULL_PATH}"
 	mkdir -p ${DEST_FULL_PATH}
 
 	# for each file to be moved...
-	find ${SRC_FULL_PATH} -name '*.mov' | while read file
+	find ${SRC_FULL_PATH} -iname '*.mov' | while read file
 	do
 		#report that the file is being moved and then move it
 	     echo "Moving: $file to ${DEST_FULL_PATH}"
